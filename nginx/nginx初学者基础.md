@@ -65,8 +65,8 @@ location ~ \.php$ {
 ---
 
 #### 配置一个 FastCgi 代理
-nginx可以将所有请求路由到 php所开发的程序是由一个 叫 cgi 的东西实现的。由于 cgi协议，每次都要 fock exit(创建，销毁)
-所以出现了 fastcgi 协议，不需要频繁的创建销毁，性能比 cgi 高很多。
+nginx可以将所有请求路由到 php所开发的程序，是由一个 叫 cgi 的东西实现的。由于 cgi协议，每次都要 fock and execute(创建，销毁)
+所以出现了 fastcgi 协议，fastcgi 会在服务器启动时候开启，并且不会退出。不需要频繁的创建销毁，性能比 cgi 高很多。
 ```
 server {
     location / {
