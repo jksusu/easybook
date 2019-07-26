@@ -38,10 +38,10 @@ worker 进程 处理请求 (worker 进程数量是可以配置的)   [配置手�
 ```
 ---
 ##### nginx 是由模块组成，这些模块由配置文件中的指令控制，指令分为简单指令和块指令
-#####简单指令 以 逗号结尾<br/>
+##### 简单指令 以 逗号结尾<br/>
 `error_log /var/log/nginx/homestead.test-error.log error;`
 
-#####块指令是以 {} 结尾 <br/>
+##### 块指令是以 {} 结尾 <br/>
 ```
 location ~ \.php$ {
     fastcgi_split_path_info ^(.+\.php)(/.+)$;
