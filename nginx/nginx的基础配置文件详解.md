@@ -110,3 +110,38 @@ server {
 >了解全部请看官方手册
 
 
+### `fastcgi_split_path_info` 指令的作用
+定义一个捕获 `$fastcgi_path_info` 变量值的正则表达式
+
+```
+location ~ ^(.+\.php)(.*)$ {
+
+    #此处是定义的 捕获 `$fastcgi_path_info` 变量的正则表达式。他的指令是 `fastcgi_split_path_info`
+    fastcgi_split_path_info       ^(.+\.php)(.*)$;
+    
+    #这里是 上面正则表达式捕获的第一个值 $fastcgi_script_name = SCRIPT_FILENAME
+    fastcgi_param SCRIPT_FILENAME /path/to/php$fastcgi_script_name;
+    
+    #这里是 上面正则表达式捕获的第二个值 $fastcgi_path_info = PATH_INFO
+    fastcgi_param PATH_INFO       $fastcgi_path_info;
+}
+```
+> 如果原始请求是 `/show.php/article/0001`
+通过分割
+* SCRIPT_FILENAME: /path/to/php/show.php
+* PATH_INFO: /article/0001
+
+
+### 传参到 FastCGI 服务器
+HTTP 请求头字段作为参数传递给 FastCGI 服务器，在作为 FastCGI 服务器运行的应用程序和脚本中，这些参数通常作为环境变量提供。<br/>
+例如，User-Agent 头字段作为 HTTP_USER_AGENT 参数传递。除 HTTP 请求头字段外，还可以使用 `fastcgi_param` 指令传递任意参数。<br/>
+
+* `ngx_http_fastcgi_module` 模块支持在 `fastcgi_param` 指令设置参数时使用内嵌变量：
+> `$fastcgi_script_name` 变量
+请求 url,或者 url 以斜杠 / 结尾，则请求 url索引文件，索引文件是由 `fastcgi_index` 指令设置。<br/>
+以上 `fastcgi_index = index.php`<br/>
+所以说这里 的变量 `$fastcgi_script_name = index.php`。<br/>
+`SCRIPT_FILENAME = /path/to/php/index.php`。<br/>
+
+
+
