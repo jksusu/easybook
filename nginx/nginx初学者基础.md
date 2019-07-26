@@ -22,11 +22,10 @@ vagrant@homestead:/etc/nginx/sites-enabled$  ps ax | grep nginx
  1341 ?        S      0:00 nginx: worker process
  7548 pts/0    S+     0:00 grep --color=auto nginx
 ```
-#### 执行 <em>ps ax | grep nginx<em> 命令，可以看到 开启了一个 master 进程 一个 worker 进程<br/>
+###### 执行  <font color=#FF7F50>ps ax | grep nginx</font> 命令，可以看到 开启了一个 master 进程 一个 worker 进程
 
-<font color=gray size=72>master 进程读取配置，维护 worker 进程<br/></font>
-<font color=gray size=72>worker 进程 处理请求 (worker 进程数量是可以配置的)   [配置手册](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)<br/></font>
-
+master 进程读取配置，维护 worker 进程<br/>
+worker 进程 处理请求 (worker 进程数量是可以配置的)   [配置手册](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)<br/>
 
 ---
 #### nginx 命令
@@ -59,7 +58,7 @@ location ~ \.php$ {
     fastcgi_read_timeout 300;
 }
 ```
-#### 块指令中的简单指令称之为 上下文
+##### 块指令中的简单指令称之为 上下文
 
 
 ---
