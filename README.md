@@ -1,5 +1,4 @@
 <h1 align="center"><a href="https://github.com/jksusu/easybook" target="_blank">easybook</a></h1>
----
 
 > 这个项目是我学习中的总结，以及一些个人理解的笔记。
 
