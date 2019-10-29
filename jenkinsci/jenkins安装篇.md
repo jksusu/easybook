@@ -8,7 +8,7 @@
 
 > 启动容器。这里需要映射两个端口号。如果是学习直接复制下面命令。生产需要挂在目录。具体见 dockerhub 说明
 
-``` docker run -d -p 8080:8080 -p 50000:50000 --name jenkins jenkinsci/blueocean```
+``` docker run -d --name jenkins -p 80:8080 -v jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock  jenkinsci/blueocean```
 
 > 进入容器复制初始密码 初始密码在 /var/jenkins_home/secrets/initialAdminPassword。文件
 
