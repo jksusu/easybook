@@ -15,7 +15,9 @@ easybook <br/>
 <h4 align="left"><a href="./vue/" target="_blank">vue篇</a></h4>
 <h4 align="left"><a href="./php/" target="_blank">php篇</a></h4>
 <h4 align="left"><a href="./cache/" target="_blank">缓存篇</a></h4>
-
+<h4 align="left"><a href="./webserver/" target="_blank">WSL篇</a></h4>
+<h4 align="left"><a href="./tool/" target="_blank">实用工具篇</a></h4>
+<h4 align="left"><a href="./php/xdebug/" target="_blank">php配置xdebug</a></h4>
 
 ## 许可证
 [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellowgreen.svg?style=flat-square)](https://github.com/jksusu/easybook/blob/master/LICENSE)
