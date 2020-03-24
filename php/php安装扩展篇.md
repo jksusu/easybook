@@ -26,3 +26,7 @@ php -m 查询是否安装
 *  `make && make install`或者两个步骤合并
 *   配置ini 文件  `extension=swoole.so`
 *   `php -m`检查是否存在
+
+##### 注意
+偶尔一些扩展会出现一些错误（请参考下篇文章）
+https://www.zybuluo.com/DFFuture/note/387585
